@@ -1,0 +1,163 @@
+#
+#
+#
+#
+#
+
+
+message = 'hello world'
+a = 'hang'
+b = 'yq'
+print(a+b)
+
+age = 23
+message = "happy " + str(age) + "rd Birthday !"
+print(message)
+
+#列表元素
+list_test = ['curry','james','nash']
+print(list_test[0])
+print(list_test[1])
+print(list_test[2])
+
+#访问集合最后一个值,但是集合是空的时候会报错、
+print(list_test[-1]) 
+
+#修改集合中的值
+list_test[0] = 'harden'
+print(list_test)
+
+#在集合中添加值
+list_test.append('durant')
+print(list_test[-1])
+
+#插入集合列表
+list_test.insert(0,'love')
+print(list_test)
+
+#从列表中删除元素,删除之后无法访问
+del list_test[-1]
+print(list_test)
+
+
+#使用pop（）删除，删除之后还可以访问，不指定位置则是删除最后一个元素并记录值。使用pop后，值元素就被删掉了。
+print(list_test)
+list_p = list_test.pop()
+print(list_p)
+print(list_test)
+
+#如果只是知道元素但是不知道位置要删除可以使用remove
+list_test.remove('love')
+print(list_test)
+
+
+#组织集合
+list_test.sort() #永久性的排序
+list_test.sort(reverse=True) #反向
+print(list_test)
+
+#使用sorted()函数临时排序
+print(sorted(list_test))
+
+#反转列表元素永久性的
+list_test.reverse()
+print(list_test)
+
+#查看集合的元素个数
+print(len(list_test))
+
+
+print('ergodicccccccccccc')
+#遍历集合
+citys = ['shanghai','beijing','guanzhou','shenzhen']
+for i in citys:
+ print(i) #每个缩进的代码行都是循环的一部分
+ print(2333) #循环打印
+print('overrrrrrr') #这行不循环，没缩进。。。
+ 
+
+#创建数值列表
+print('This is a list of number')
+numbers = list(range(1,6))
+for i in numbers:
+ print(i)
+
+#使用range时可以指定步长
+numbers = list(range(2,11,2)) #1-10之间的偶数
+print(numbers)
+
+
+#列表解析
+square = [value**2 for value in range(1,6)]
+print(square)
+
+#列表切片
+square = list(range(1,11))
+print(square[0:4])
+print(square)
+print(square[:9])
+print(square[1:])
+print(square[-3:])
+
+
+#元组,列表中不能修改的值。使用圆括号,修改元组就重新定义
+deminos =(100,200)
+print(deminos)
+
+
+#if语句 比较相等用== 不等用!=
+print('This is a if test')
+numbers = list(range(1,11))
+for i in numbers:
+	if i == 5:
+		print('get 5')
+	elif i==10:
+		print('get 10')	
+	else:
+		print('oooo')
+
+print(4 in numbers) #返回TRUE 判断特定值是否在列表中			
+
+#字典，相当于键值，一个键对应一个值
+print('This is a dic test')
+alien = {'color' : 'blue' , 'age' : 5}
+print(alien['color'])
+print(alien['age'])
+
+#添加键值对
+alien['x_pos']=234
+alien['y_pos']=425
+print(alien)
+#修改键值对
+alien['x_pos']=111
+print(alien)
+
+#删除键值对
+del alien['color']
+print(alien)
+
+
+#遍历字典
+for key,value in alien.items():
+	print(key)
+	print(value)
+#遍历所有键 遍历出来是无序的，可以加sorted(alien.keys())排序遍历
+for key in alien.keys():
+	print(key)
+
+for value in alien.values():
+	print(value)	
+
+
+#用户输入input() 使用input时，默认时字符串，输入数字时需要使用int转换
+#print('This is input test--------------------------')
+#message = input('please input something:')
+#print(message)
+	
+	
+#while循环
+print('This is while test-----------------')
+zz = 1
+while zz <= 5:
+	print(zz)
+	zz += 1	
