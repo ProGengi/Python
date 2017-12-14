@@ -161,3 +161,80 @@ zz = 1
 while zz <= 5:
 	print(zz)
 	zz += 1	
+
+#将函数存储在模块中，就是保存为一个.py文件。然后调用时 import 该py文件
+#使用别名 import pizza as mp
+#导入函数 from pizza import make_pizza
+#如果想导入该模块下所有 from pizza import *
+
+#类
+class dog():
+	def __init__(self,name,age):
+		#初始化name和age
+		self.name = name
+		self.age = age
+	
+	def sit(self):
+		print(self.name + " is now sitting.")
+	
+	def run(self):
+		print(self.name + " is running.")
+
+my_dog = dog('willie',6)
+print("My dog's name is : " + my_dog.name)
+print("My dog's age is : " + my_dog.age)
+#类中的函数叫方法，__init__是一个特殊的方法，self形参是必须的，并且是第一个self会自动传值。
+			
+			
+
+#读取文件,open打开当前执行目录下的文件，关键字with会自动在适当的时候关闭文件
+with open('pi_digits.txt') as file_object:
+	contents = file_object.read()
+	print(contents)
+
+#在linux中文件路径'/tmp/pi.txt'
+
+#逐行读取
+with open ('test.txt') as file_ob:
+	for line in file_ob:
+		print(line)
+		
+
+#readline()逐行读取
+filename = 'pi_digits.txt'
+with open(filename) as file_object:
+	lines = file_object.readlines()
+for line in lines:
+	print(line.rstrip())
+
+#写入文件
+#读取模式 （'r' ）、写入模式 （'w' ）、追加模式 （'a' ）或让你能够读取和写入文件的模式（'r+' ）。如果省略了模式实参，默认的只读模式打开。
+with open('/tmp/test.txt','w') as file_ob:
+	file_ob.write("I love python.\n") #write 不会在行尾添加换行符
+	file_ob.write("I love you.\n")			
+
+filename = 'programming.txt'
+ with open(filename, 'a') as file_object:
+	  file_object.write("I also love finding meaning in large datasets.\n")
+	  file_object.write("I love creating apps that can run in a browser.\n")
+
+#异常
+try:
+	print(5/0)
+except ZeroDivisionError:
+	print("You can't divide by zero!")
+
+#存储数据，加载数据json.dump(),json.load()
+import json
+numbers = [2, 3, 5, 7, 11, 13]
+filename = 'numbers.json'
+with open(filename, 'w') as f_obj:
+	json.dump(numbers, f_obj)
+
+import json
+filename = 'numbers.json'
+with open(filename) as f_obj:
+	numbers = json.load(f_obj)
+print(numbers)
+
+
